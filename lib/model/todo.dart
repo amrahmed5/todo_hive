@@ -1,22 +1,22 @@
 
 
-class ToDo {
-  String? id;
-  String? todoText;
-  bool isDone;
-  DateTime? time;
+class PanelModel {
+  List<TaskItem> items;
+  String time;
+  bool? isCompleted;
+  bool isExpanded;
 
-  ToDo({
-    required this.id,
-    required this.todoText,
-    this.isDone = false,
-    this.time,
+  PanelModel({
+    required this.items,
+    required this.time,
+    this.isCompleted,
+    required this.isExpanded,
   });
+}
 
+class TaskItem {
+  String description;
+  bool isDone;
 
-
-  // Method to format the time with AM/PM
-
-
-
+  TaskItem({required this.description, required this.isDone});
 }

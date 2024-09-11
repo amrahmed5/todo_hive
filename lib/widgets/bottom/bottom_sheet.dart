@@ -144,7 +144,7 @@ class _TaskBottomSheetState extends State<TaskBottomSheet> {
                     }
                   },
                   icon: const Icon(Icons.add, size: 30),
-                  color: Colors.blue,
+                  color: Colors.cyan,
                 ),
                 const SizedBox(height: 12),
                 SizedBox(

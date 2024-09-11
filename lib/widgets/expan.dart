@@ -27,7 +27,7 @@ class _ExpansionPanelItemState extends State<ExpansionPanelItem> {
         child: Container(
           decoration: BoxDecoration(
             border: Border.fromBorderSide(
-              BorderSide(color: Colors.blue, width: 2),
+              BorderSide(color: Colors.black54, width: 2),
             ),
           ),
           child: ExpansionPanelList(
@@ -109,6 +109,7 @@ class _ExpansionPanelItemState extends State<ExpansionPanelItem> {
                                 icon: const Icon(
                                   Icons.edit,
                                   size: 30,
+                                  color: Colors.yellow,
                                 ),
                               ),
                               const SizedBox(width: 10),
@@ -193,7 +194,7 @@ class _ExpansionPanelItemState extends State<ExpansionPanelItem> {
             style: TextStyle(fontSize: 20),
             controller: editingController,
             decoration: const InputDecoration(
-              hintText: "Edit this task",
+              hintText: "Edit ToDo Task",
               hintStyle: TextStyle(fontSize: 22),
             ),
           ),

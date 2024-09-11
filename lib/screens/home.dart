@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
       alignment: Alignment.bottomCenter,
       children: [
         Scaffold(
-          backgroundColor: const Color(0xfffefefe),
+          backgroundColor: const Color(0xfffefef),
           appBar: AppBar(
             backgroundColor: const Color(0xfffefefe),
             toolbarHeight: 100,
@@ -42,10 +42,10 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Text(
                       '${DateFormat.EEEE().format(DateTime.now())}, ${DateTime.now().day}, ${DateFormat.MMM().format(DateTime.now())} ${DateTime.now().year}',
-                      style: const TextStyle(color: Color(0xffc8c8c8), fontSize: 28),
+                      style: const TextStyle(color:Colors.black87, fontSize: 28),
                     ),
                     const SizedBox(width: 23),
-                    const Icon(Icons.calendar_today, color: Colors.grey),
+                    const Icon(Icons.calendar_today, color: Colors.black),
                   ],
                 ),
 

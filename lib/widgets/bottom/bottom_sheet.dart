@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-
 import '../../model/todo.dart';
 import '../../time/time.dart';
 import '../item.dart';

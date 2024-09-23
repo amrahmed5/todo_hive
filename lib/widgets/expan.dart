@@ -209,7 +209,6 @@ class _ExpansionPanelItemState extends State<ExpansionPanelItem> {
               onPressed: () {
                 if (editingController.text.isNotEmpty) {
                   setState(() {
-                    TaskController.editTask(task, editingController.text);
                   });
                   Navigator.of(context).pop();
                 }

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:intl/intl.dart';
-
 import '../controllers/controller.dart';
-
 import '../widgets/bottom/bottom_sheet.dart';
 import '../widgets/expan.dart';
 
@@ -13,17 +10,30 @@ class HomePage extends StatefulWidget {
 
   @override
   State<HomePage> createState() => _HomePageState();
-
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+      for (var panel in TaskController.panels) {
+        panel.isExpanded = false;
+      }
+      TaskController.loadPanels();
+      for (var panel in TaskController.panels) {
+        panel.isExpanded = false;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.bottomCenter,
       children: [
         Scaffold(
-          backgroundColor: const Color(0xfffefef),
+          backgroundColor: const Color(0xfffefefe),
           appBar: AppBar(
             backgroundColor: const Color(0xfffefefe),
             toolbarHeight: 100,
@@ -41,14 +51,14 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   children: [
                     Text(
-                      '${DateFormat.EEEE().format(DateTime.now())}, ${DateTime.now().day}, ${DateFormat.MMM().format(DateTime.now())} ${DateTime.now().year}',
-                      style: const TextStyle(color:Colors.black87, fontSize: 28),
+                      ' ${DateFormat.EEEE().format(DateTime.now())} , ${DateTime.now().day}, ${DateFormat.MMM().format(DateTime.now())} ${DateTime.now().year}',
+                      style: const TextStyle(
+                          color: Color(0xffc8c8c8), fontSize: 28),
                     ),
                     const SizedBox(width: 23),
-                    const Icon(Icons.calendar_today, color: Colors.black),
+                    const Icon(Icons.calendar_today, color: Colors.grey),
                   ],
                 ),
-
               ],
             ),
           ),
@@ -63,10 +73,10 @@ class _HomePageState extends State<HomePage> {
                     TaskController.deleteTask(panel, task);
                     if (panel.items.isEmpty) {
                       TaskController.deletePanel(panel);
+                      setState(() {});
                     }
                   });
                 },
-
               );
             },
           ),
@@ -105,9 +115,9 @@ class _HomePageState extends State<HomePage> {
                 },
               );
             },
-            child: Row(
+            child: const Row(
               mainAxisSize: MainAxisSize.min,
-              children: const [
+              children: [
                 Icon(
                   Icons.add,
                   size: 30,
